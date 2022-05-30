@@ -51,7 +51,7 @@ const renderWeatherApp = data => {
     cityName.textContent = `${name}, ${country}`
     weatherIcon.src = `http://openweathermap.org/img/wn/${weather[0].icon}@4x.png`
     weatherDesc.textContent = `${capitalize(weather[0].description)}`
-    weatherTemp.textContent = `${main["temp"]} ${symbol}`
+    weatherTemp.textContent = `${Math.round(main["temp"])}${symbol}`
     windDesc.innerText = `Winds: ${wind["speed"]} ${velocSymbol}`
     humidity.innerText = `Humidity: ${main["humidity"]} %`
     pressure.innerText = `Pressure: ${main["pressure"]} hPa`

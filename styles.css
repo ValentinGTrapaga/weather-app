@@ -6,13 +6,14 @@
 
 body {
     margin: 0px;
-    background-color: #000000;
+    background-color: #eefbff;
 }
 
 main {
     max-width: 300px;
     margin: 1rem auto;
     padding: 1rem;
+    padding-bottom: 2rem;
     font-family: "Roboto Mono", sans-serif;
     background: rgb(239,70,70);
     background: linear-gradient(149deg, rgba(239,70,70,1) 0%, rgba(244,176,98,1) 47%, rgba(243,228,143,1) 100%);
@@ -21,6 +22,32 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 10px solid rgb(0, 0, 0);
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+#topBar {
+    content: "";
+    position: absolute;
+    top: 18px;
+    background-color: black;
+    z-index: 9;
+    height: 15px;
+    width: 65px;
+    border-radius: 4px;
+}
+
+#topBar::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: 5px;
+    background-color: rgba(152, 152, 152, 0.502);
+    z-index: 10;
+    height: 4px;
+    width: 55px;
+    border-radius: 1px;
+    box-shadow: -1px -1px 2px white inset;
 }
 
 #form-container {
@@ -61,6 +88,11 @@ form {
     background-color: rgba(0, 0, 0, 0.322);
     border-radius: 1rem;
     padding: 1rem;
+}
+
+#weatherTemp {
+    margin: 0px;
+    font-size: 2.5rem;
 }
 
 #weatherConditions {

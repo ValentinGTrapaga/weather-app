@@ -10,9 +10,10 @@
 <body>
     <main>
         <div id="form-container">
+            <div id="topBar"></div>
             <h4 id="title">City</h4>
             <form action="" onsubmit="getWeather(event)">
-                <input type="text" name="cityInput" id="cityInput" required>
+                <input type="text" name="cityInput" id="cityInput" required autocomplete="off" autofocus>
                 <div id="unitInput">
                     <span><input type="radio" name="unit" id="celsius" value="metric" checked><label for="celsius" >°C</label></span>
                     <span><input type="radio" name="unit" id="fahrenheit" value="imperial"><label for="fahrenheit">°F</label></span>
@@ -23,8 +24,8 @@
             <div id="cityName"></div>
             <div id="weatherConditions">
                 <img src="" alt="" id="weatherIcon">
-                <div id="weatherDesc"></div>
                 <div id="weatherTemp"></div>
+                <div id="weatherDesc"></div>
                 <span id="windDesc"><img src="" id="windIcon" class="svgSmall" alt=""></span>
                 <span id="humidity"><img src="" id="humidityIcon" class="svgSmall" alt=""></span>
                 <span id="pressure"></span>
