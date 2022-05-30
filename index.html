@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather APP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <div id="form-container">
+            <h4 id="title">City</h4>
+            <form action="" onsubmit="getWeather(event)">
+                <input type="text" name="cityInput" id="cityInput" required>
+                <div id="unitInput">
+                    <span><input type="radio" name="unit" id="celsius" value="metric" checked><label for="celsius" >°C</label></span>
+                    <span><input type="radio" name="unit" id="fahrenheit" value="imperial"><label for="fahrenheit">°F</label></span>
+                </div>
+            </form>
+        </div>
+        <div id="display">
+            <div id="cityName"></div>
+            <div id="weatherConditions">
+                <img src="" alt="" id="weatherIcon">
+                <div id="weatherDesc"></div>
+                <div id="weatherTemp"></div>
+                <span id="windDesc"><img src="" id="windIcon" class="svgSmall" alt=""></span>
+                <span id="humidity"><img src="" id="humidityIcon" class="svgSmall" alt=""></span>
+                <span id="pressure"></span>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="index.js"></script>
+</html>
