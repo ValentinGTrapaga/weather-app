@@ -69,10 +69,10 @@ function renderErrorPage() {
     app.setAttribute = ("display", "none")
 }
 
+navigator.geolocation.getCurrentPosition(success, error)
 
 function success(pos) {
-    window.onload = crd => {
-        console.log(crd);
+    window.onload = () => {
         fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&APPID=bd8cfe32865d2f6286924722b05aaf80&units=${unit}`)
         .then(res => res.json())
         .then(response => renderWeatherApp(response))
@@ -83,5 +83,8 @@ function success(pos) {
     }
 }
 
-navigator.geolocation.getCurrentPosition(success)
+function error() {
+    renderErrorPage()
+}
+
 //https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=bd8cfe32865d2f6286924722b05aaf80&units=${unit}
