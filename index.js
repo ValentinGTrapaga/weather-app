@@ -1,6 +1,6 @@
 //Form
 const cityInput = document.getElementById('cityInput')
-const unitValue = document.querySelectorAll('input[name="unit"]')
+const unitBtns = document.querySelectorAll('input[name="unit"]')
 let unit = "metric"
 let symbol = "°C"
 let velocSymbol = "m/s"
@@ -21,7 +21,7 @@ const h4 = document.querySelector('#title')
 
 const getWeather = event => {
     event.preventDefault()
-    if (unitValue[0].checked) {
+    if (unitBtns[0].checked) {
         unit = "metric"
         symbol = "°C"
         velocSymbol = "m/s"
@@ -72,15 +72,20 @@ function renderErrorPage() {
 navigator.geolocation.getCurrentPosition(success, error)
 
 function success(pos) {
-    window.onload = () => {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&APPID=bd8cfe32865d2f6286924722b05aaf80&units=${unit}`)
-        .then(res => res.json())
-        .then(response => renderWeatherApp(response))
-        .catch(err => {
-            console.log(err)
-            renderErrorPage()
-        })
+    if(pos.coords) {
+        window.onload = () => {
+            fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&APPID=bd8cfe32865d2f6286924722b05aaf80&units=${unit}`)
+            .then(res => res.json())
+            .then(response => renderWeatherApp(response))
+            .catch(err => {
+                console.log(err)
+                renderErrorPage()
+            })
+        }
+    } else {
+        renderErrorPage()
     }
+    
 }
 
 function error() {
