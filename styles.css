@@ -15,8 +15,11 @@ main {
     padding: 1rem;
     padding-bottom: 2rem;
     font-family: "Roboto Mono", sans-serif;
-    background: rgb(239,70,70);
-    background: linear-gradient(149deg, rgba(239,70,70,1) 0%, rgba(244,176,98,1) 47%, rgba(243,228,143,1) 100%);
+    background: rgb(70, 170, 239);
+    background: -moz-linear-gradient(320deg, rgba(70, 170, 239, 1) 0%, rgba(98, 118, 244, 1) 47%, rgba(0, 13, 254, 1) 100%);
+    background: -webkit-linear-gradient(320deg, rgba(70, 170, 239, 1) 0%, rgba(98, 118, 244, 1) 47%, rgba(0, 13, 254, 1) 100%);
+    background: linear-gradient(320deg, rgba(70, 170, 239, 1) 0%, rgba(98, 118, 244, 1) 47%, rgba(0, 13, 254, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#46aaef", endColorstr="#000dfe", GradientType=1);
     color: white;
     border-radius: 1rem;
     display: flex;
